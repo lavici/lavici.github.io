@@ -1,2 +1,67 @@
-name: Laura Vicinanza
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+plugins:
+  - bourbon
+  - neat
+
+exclude:
+  - readme.md
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+
+include:
+  - _pages
+  - _redirects
+
+# Site settings
+title: Laura Vicinanza
+email: lavici@umich.edu
+description: "Portfolio of Software Developer Laura Vicinanza"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "lavici.github.io" # the base hostname & protocol for your site
+timezone: Eastern Time
+year: 2019
+sitemap: true
+
+# Social networks
+social-username:
+  twitter: "@lavici"
+  linkedin: "lvicinanza"
+  github: "lavici"
+  instagram: "expanding_multiverse"
+  soundcloud: "lorelei-atl-det"
+
+# Content
+image_serve_path: "/images"
+
+# Build settings
 markdown: kramdown
+
+kramdown:
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+
+# Sass output
+sass:
+  style: compressed # :nested :compact :expanded :compressed
+
+
+# Structure
+navigation:
+  - title: Home
+    url: /
+  - title: About
+    url: /about
+
+permalink: /:title/
+
+# Configure site collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/

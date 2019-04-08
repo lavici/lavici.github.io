@@ -1,0 +1,157 @@
+---
+layout: page
+title: About
+permalink: /about/
+
+intro: |
+  Hi, I'm Laura Vicinaza. Analytically minded and creatively driven, I am passionate about building and fostering online creative communities. With a B.S. in Computer Science from the University of Michigan, Ann Arbor, I currently live and work in Atlanta, GA and am actively seeking a career in full-stack software development. 
+
+  This website is still in progress along with another [Web Audio API "Twitter" App](https://github.com/lavici/musictweets) project I am currently working on.
+
+  You can contact me using the form below, connect with me on [LinkedIn](https://linkedin.com/in/lauravicinanza), follow my past and current projects on [GitHub](https://github.com/lavici), and listen to my music on [SoundCloud](https://soundcloud.com/lorelei-atl-det).
+
+
+profile_picture: /images/profile-pictures/profile.jpg
+
+experience:
+  - company: Ann Arbor Art    
+    position: Designer and Full-Stack Developer
+    period: 2018
+
+  - company: Race, Crime and Media Bias Study
+    position: Researcher and Developer
+    period: 2018
+
+  - company: Michigan Electronic Music Collective
+    position: President
+    period: 2014 - 2018
+
+  - company: EnterPricing
+    position: Web Design and Digital Marketing Intern
+    period: 2016
+
+  - company: Detroit Hispanic Development Corporation 
+    position: Research Fellow
+    period: 2015
+
+education:
+  - course: B.S. Computer Science
+    place: University of Michigan, Ann Arbor
+
+  - course: Coursework
+    place: Database Systems, Web Systems, Information Retrieval, User Interface Development
+
+  - course: Organizations
+    place: Michigan Electronic Music Collective, 88.3 WCBN FM Ann Arbor, Michigan ICC Cooperative House, Michigan Journal of International Affairs, Girls in Electrical Engineering and Computer Science (GEECs)
+
+skills:
+  - Full-Stack Web Development
+  - UI/UX design
+  - Data Analytics 
+  - Team/Project leadership and management
+  - Contextual inquiry
+  - Music production/engineering
+  - Spanish (conversational), German (working knowledge)
+
+tools:
+  - C/C++
+  - JavaScript and Angular
+  - SQL
+  - HTML
+  - CSS, SASS (SCSS), and Bootstrap
+  - Jekyll
+  - MacOS, Git, Linux
+  - Ableton, Audacity, Logic Pro, Max/MSP
+
+about_site: |
+  - This site was built from [Matt Grey](http://himatt.com) with permission using [Jekyll](https://jekyllrb.com/).
+
+  - Styles are mobile first, responsive, and utilise
+  [SASS](http://sass-lang.com/), [Bourbon Neat](http://neat.bourbon.io/) for the
+  grid, and [Normalize.css](http://github.com/necolas/normalize.css).
+
+  - Other tools and libraries used include [jQuery](https://jquery.com/),
+  [Headspace](https://github.com/gdub22/headspace)
+
+  - All the code for this site is opensource and available on
+  [Github](https://github.com/lavici/lavici.github.io) under the GNU General Public License v3
+
+  {:.list--dashed .list--small}
+---
+
+<div class="about-wrapper">
+  <div class="about">
+    <div class="about-intro">
+      <div class="about-intro-image paragraph-main">
+        <a href="/"><img src="{{ page.profile_picture }}" alt=""></a>
+      </div>
+
+      <div class="about-intro-description paragraph-main">
+        {{ page.intro | markdownify }}
+        <div style="margin-right: 20%;">
+        <form method="POST" action="https://formspree.io/lavici@umich.edu">
+        <input type="email" name="email" placeholder="Your email">
+        <textarea name="message" placeholder="Message"></textarea>
+        <button type="submit">Contact me</button>
+      </form>
+      </div>
+
+      </div>
+    </div>
+
+    <div class="about-attributes">
+      <div class="about-experience">
+        <div class="about-section">
+          <h3 class="about-section-title">Experience</h3>
+          <dl class="relational-list">
+            {% for experience-item in page.experience %}
+              <dt class="relational-list__title">{{ experience-item.company | markdownify}}</dt>
+              <dd class="relational-list__description relational-list__description--period">{{ experience-item.period | markdownify}}</dd>
+              <dd class="relational-list__description">{{ experience-item.position | markdownify}}</dd>
+            {% endfor %}
+          </dl>
+        </div>
+      </div>
+
+      <div class="about-education">
+        <div class="about-section">
+          <h3 class="about-section-title">Education</h3>
+          <dl class="relational-list">
+            {% for education-item in page.education %}
+              <dt class="relational-list__title">{{ education-item.course | markdownify}}</dt>
+              <dd class="relational-list__description">{{ education-item.place | markdownify}}</dd>
+            {% endfor %}
+          </dl>
+        </div>
+      </div>
+
+      <div class="about-tools">
+        <div class="about-section">
+          <h3 class="about-section-title">Tools &amp; Technologies</h3>
+          <ul class="list--dashed list--small">
+            {% for tool in page.tools %}
+              <li>{{ tool | markdownify }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <div class="about-skills">
+        <div class="about-section">
+          <h3 class="about-section-title">Skills</h3>
+          <ul class="list--dashed list--small">
+            {% for skill in page.skills %}
+              <li>{{ skill }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="about-site">
+      <div class="about-section about-site-description">
+        <h3 class="about-section-title"> About this site</h3>
+        <div class="paragraph-small">{{ page.about_site | markdownify }}</div>
+      </div>
+    </div>
+  </div>
+</div>
